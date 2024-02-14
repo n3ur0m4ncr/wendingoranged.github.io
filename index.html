@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeo em Tela Cheia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<video id="myVideo" autoplay muted loop playsinline controls>
+    <source src="https://firebasestorage.googleapis.com/v0/b/otpcell-644c8.appspot.com/o/WEDDING%20AZUL.mp4?alt=media&token=d5025f70-dd01-4489-90e6-986ed4243874" type="video/mp4">
+    Seu navegador não suporta vídeos HTML5.
+</video>
+
+<script>
+document.getElementById('myVideo').addEventListener('click', function() {
+    if (this.muted) {
+        this.muted = false; // Desmuta o vídeo quando o usuário clica nele
+    } else if (this.requestFullscreen) {
+        this.requestFullscreen(); // Solicita tela cheia ao clicar, se não estiver mudo
+    } else if (this.webkitRequestFullscreen) {
+        this.webkitRequestFullscreen(); // Alternativa para Safari
+    } else if (this.msRequestFullscreen) {
+        this.msRequestFullscreen(); // Alternativa para IE11
+    }
+});
+</script>
+
+</body>
+</html>
